@@ -1,0 +1,100 @@
+.elemento {
+    color: lightgray;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.elemento1, .elemento2, .elemento3 {
+    background: black;
+    border: 1px solid white;
+}
+
+.elemento4, .elemento5, .elemento6 {
+    background: orange;
+}
+
+.elemento7, .elemento8, .elemento9 {
+    background: cornflowerblue;
+}
+
+.elemento10 {
+    background: green;
+}
+
+/*
+            xs
+    768px   sm
+    992px   md
+    1200px  lg no lo ocuparemos.
+*/
+
+/* SM */
+@media (min-width: 768px) {
+    .contenedor {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .elemento {
+        flex-basis: 100%;
+        box-sizing: border-box;
+    }
+    .elemento2, .elemento3 {
+        flex-basis: 50%;
+    }
+    .elemento4 {
+        flex-basis: 80%;
+    }
+    .elemento5 {
+        flex-basis: 90%;
+        margin-left: auto;
+    }
+    .elemento6 {
+        flex-basis: 90%;
+        margin-right: auto;
+    }
+    .elemento7 {
+        flex-basis: 50%;
+        margin-right: auto;
+    }
+    .elemento9 {
+        flex-basis: 50%;
+        margin-left: auto;
+    }
+    .elemento10 {
+        flex-basis: 20%;
+        margin-right: 40%;
+        margin-left: 40%;
+    }
+    
+}
+
+/* MD */
+@media (min-width: 992px) {
+    .elemento1, .elemento2 {
+        flex-basis: 20%;
+    }
+    .elemento3 {
+        flex-basis: 60%;
+    }
+    .elemento4, .elemento9 {
+        flex-basis: 100%;
+    }
+    .elemento5 {
+        flex-basis: 60%;
+        margin-left: auto;
+    }
+    .elemento6 {
+        flex-basis: 60%;
+        margin-right: auto;
+    }
+    .elemento7, .elemento8 {
+        flex-basis: 50%;
+    }
+    .elemento10 {
+        flex-basis: 50%;
+        margin-left: auto;
+        margin-right: 0px;
+    }
+}

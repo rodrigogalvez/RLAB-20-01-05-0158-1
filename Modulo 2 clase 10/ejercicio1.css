@@ -1,0 +1,51 @@
+.elemento {
+    color: lightgray;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.elemento1, .elemento2 {
+    background: cornflowerblue;
+}
+
+.elemento3, .elemento4 {
+    background: darkorange;
+}
+
+.elemento5, .elemento6 {
+    background: green;
+}
+
+/*
+            xs
+    768px   sm
+    992px   md
+    1200px  lg no lo ocuparemos.
+*/
+
+/* SM */
+@media (min-width: 768px) {
+    .contenedor {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .elemento {
+        flex-basis: 100%;
+        box-sizing: border-box;
+    }
+
+    .elemento1, .elemento2, .elemento5, .elemento6 {
+        flex-basis: 50%;
+    }
+    
+}
+
+/* MD */
+@media (min-width: 992px) {
+    .elemento3 {
+        flex-basis: 50%;
+    }
+}

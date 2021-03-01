@@ -1,0 +1,67 @@
+.elemento {
+    color: lightgray;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.elemento1, .elemento2 {
+    background: cornflowerblue;
+}
+
+.elemento3, .elemento4 {
+    background: yellow;
+    color: black;
+}
+
+.elemento5, .elemento6, .elemento7, .elemento8 {
+    background: gray;
+}
+
+/*
+            xs
+    768px   sm
+    992px   md
+    1200px  lg no lo ocuparemos.
+*/
+
+/* SM */
+@media (min-width: 768px) {
+    .contenedor {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .elemento {
+        flex-basis: 100%;
+        box-sizing: border-box;
+    }
+
+    .elemento3, .elemento5, .elemento6 {
+        flex-basis: 50%;
+    }
+
+    .elemento3 {
+        margin-right: auto;
+    }
+    
+}
+
+/* MD */
+@media (min-width: 992px) {
+    .elemento1, .elemento2, .elemento3, .elemento4 {
+        flex-basis: 50%;
+    }
+    .elemento5 {
+        flex-basis: 60%;
+        margin-left: auto;
+    }
+    .elemento6 {
+        flex-basis: 100%;
+    }
+    .elemento7 {
+        flex-basis: 40%;
+        margin-right: auto;
+    }
+}

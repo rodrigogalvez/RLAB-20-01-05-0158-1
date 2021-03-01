@@ -1,0 +1,39 @@
+
+.contenedor {
+    width: 500px;
+    height: 200px;
+    padding: 10px;
+    background: #fff;
+    border: 10px solid #2c3e50;
+    margin: 20px;
+    display: flex;
+    flex-direction: row; /* Predeterminado es row*/
+    flex-wrap: wrap; /* Predetermiando nowrap*/
+    /* Ambas atributos pueden ser escritos en una sola fila con
+        flex-flow: row wrap; */
+    justify-content: space-around;
+    align-items: baseline;
+    align-content: space-around;
+    flex-basis: 100px;
+}
+
+.elemento {
+    color: #fff;
+    margin: 5px;
+    width: 50px;
+    background: #e67e22;
+    text-align: center;
+    height: 50px;
+    flex-grow: 1;
+    order: 1;
+}
+
+body {
+    background: #e9e9e9;
+}
+
+.elemento2 {
+    /* font-size: 50px; */
+    flex-grow: 3;
+    order: 2;
+}
