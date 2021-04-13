@@ -1,0 +1,11 @@
+
+
+.carousel-item {
+    height: 400px;
+    img {
+        object-fit: cover;
+        height: 400px;
+    }
+
+    transition: transform 2s ease, opacity .5s ease-out;
+}

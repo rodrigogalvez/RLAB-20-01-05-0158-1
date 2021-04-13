@@ -1,0 +1,55 @@
+body {
+    margin: 0px;
+}
+
+.contenedor  {
+    border: 4px solid blue;
+    height: 500px;
+    margin: 10px;
+    /* son 20px porque el margen es de 10px izquierdo y derecho*/
+    width: calc( 100% - 20px );
+    box-sizing: border-box;
+    /* Si no tiene box-sizing: border-box, entonces hay que descontar el borde de 4px izquierdo y derecho: 
+    width: calc( 100% - 20px - 8px );
+    */
+}
+
+.elemento {
+    border: 1px solid salmon;
+    /* width: 100px; */
+    background-color: sandybrown;
+    text-align: center;
+    color: white;
+    /* margin: 2px; */
+}
+
+.ejemplo1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ejemplo1 > .elemento {
+    flex-basis: 30px;
+}
+
+.ejemplo2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ejemplo2 > .elemento {
+    flex-basis: 30px;
+}
+
+
+.ejemplo3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.ejemplo3 > .elemento {
+    flex-basis: 30px;
+}

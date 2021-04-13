@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-group">
+            <label>Buscar</label>
+            <input type="search"
+                   id="texto"
+                   oninput="actualizarResultado()"
+                   class="form-control"
+                   autocomplete="off">
+        </div>
+        <div class="card">
+            <div class="card-header">
+                Listado de alumnos
+            </div>
+            <ol id="resultado"
+                class="list-group list-group-flush">
+            </ol>
+        </div>
+        <form onsubmit="return false;"
+              id="formulario">
+            <div class="form-group">
+                <label>ID</label>
+                <input type="text"
+                       id="id"
+                       autocomplete="off"
+                       class="form-control"
+                       readonly>
+            </div>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text"
+                       id="nombre"
+                       class="form-control"
+                       autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label>Apellido</label>
+                <input type="text"
+                       id="apellido"
+                       class="form-control"
+                       autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label>Edad</label>
+                <input type="number"
+                       id="edad"
+                       class="form-control"
+                       autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label>Tipo</label>
+                <select id="tipo"
+                        class="form-control">
+                    <option value="">Seleccione un tipo</option>
+                    <option value="Presencial">Presencial</option>
+                    <option value="Online">Online</option>
+                    <option value="Libre">Libre</option>
+                </select>
+            </div>
+            <button onclick="agregar()"
+                    class="btn btn-primary">Agregar</button>
+        </form>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

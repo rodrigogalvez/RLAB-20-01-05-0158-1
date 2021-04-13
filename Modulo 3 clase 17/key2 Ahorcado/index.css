@@ -1,0 +1,40 @@
+p#secreto > span {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  background-color: darkgoldenrod;
+  color: whitesmoke;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+p#vidas > span {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  color: whitesmoke;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+p#vidas > span.vivo {
+    background-color: green;
+}
+
+p#vidas > span.muerto {
+    background-color: red;
+}
+
+p#gameover {
+    display: none;
+    position: fixed;
+    top: 2rem;
+    left: 1rem;
+    font-size: xx-large;
+}
+
+p#gameover.visible {
+    display: block;
+}

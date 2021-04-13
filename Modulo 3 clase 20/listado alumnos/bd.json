@@ -1,0 +1,68 @@
+{alumnos: [
+        {
+                nombre: "Rodrigo",
+                apellido: "Galvez",
+                tipo: "Presencial"
+        },
+        {
+                nombre: "Alex",
+                apellido: "Carrasco",
+                tipo: "Presencial"
+        },
+        {
+                nombre: "Cristina",
+                apellido: "Núñez",
+                tipo: "Presencial"
+        },
+        {
+                nombre: "Andrea",
+                apellido: "Oyarce",
+                tipo: "Presencial"
+        },
+        {
+                nombre: "Hithamar",
+                apellido: "Duran",
+                tipo: "Presencial"
+        },
+        {
+                nombre: "Javiera",
+                apellido: "Krammle",
+                tipo: "Presencial"
+        },
+        {
+                nombre: "Joaquin",
+                apellido: "Jaramillo",
+                tipo: "Presencial"
+        },
+        {
+                nombre: "Jorge",
+                apellido: "Galleguillos",
+                tipo: "Presencial"
+        },
+        {
+                nombre: "Mauricio",
+                apellido: "Fernández",
+                tipo: "Presencial"
+        },
+        {
+                nombre: "Nicolás",
+                apellido: "Zapata",
+                tipo: "Presencial"
+        },
+        {
+                nombre: "Paola",
+                apellido: "Gill",
+                tipo: "Presencial"
+        },
+        {
+                nombre: "Rodrigo",
+                apellido: "Carrasco",
+                tipo: "Presencial"
+        },
+        {
+                nombre: "Leandro",
+                apellido: "Venegas",
+                tipo: "Presencial"
+        }
+    ]
+}

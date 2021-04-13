@@ -1,0 +1,9 @@
+.jumbotron {
+  background-color: lightblue;
+}
+
+.btn-primary {
+  color: gray;
+  background-color: darkblue;
+  border-color: darkblue;
+}

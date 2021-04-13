@@ -1,0 +1,21 @@
+.fullscreen {
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    border: 2px solid red;
+}
+
+.pelota {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    background-color: blue;
+}

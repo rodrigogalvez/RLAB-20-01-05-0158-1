@@ -1,0 +1,46 @@
+.alfa {
+  color: red;
+}
+
+.beta {
+  color: green;
+}
+
+.gama {
+  color: blue;
+}
+
+.alfa > .gama {
+  background-color: violet;
+}
+
+.gama + * {
+  font-style: italic;
+}
+
+.marcador + p {
+  background-color: red;
+}
+
+.marcador + p + p {
+  background-color: green;
+}
+
+.marcador:not(:checked) + p {
+  /* display: none; */
+  background-color: darkgray;
+}
+
+.marcador:checked + p + p {
+  /* display: none; */
+  background-color: darkgray;
+}
+
+.marcador:hover + p + p +p {
+    background-color: deeppink;
+}
+
+.marcador:active + p + p +p {
+    background-color: darkorange;
+}
+

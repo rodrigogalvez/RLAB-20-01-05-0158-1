@@ -1,0 +1,17 @@
+.mario {
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+}
+
+.mario > img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+/* .mario:hover > img {
+    object-fit: contain;
+    width: 200%;
+    height: 200%;
+} */

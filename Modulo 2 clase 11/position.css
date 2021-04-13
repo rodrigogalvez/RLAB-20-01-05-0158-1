@@ -1,0 +1,96 @@
+/* * {
+    word-spacing: 0%;
+    letter-spacing: 0ch;
+    white-space: initial;
+} */
+
+.letra {
+    background-color: black;
+    color: yellow;
+    font-size: large;
+    /* display: inline-block; */
+}
+
+/* .letra:nth-child(1) {
+    color: red;
+    top: 0px;
+    left: 0px
+} */
+
+.letra:nth-child(2) {
+    position: absolute;
+    color: red;
+    top: 20px;
+    left: 20px;
+}
+
+/* .letra:nth-child(3) {
+    color: red;
+    top: 2rem;
+    left: 2rem;
+}
+
+
+.letra:nth-child(4) {
+    color: red;
+    top: 3rem;
+    left: 3rem;
+}
+
+.letra:nth-child(5) {
+    color: red;
+    top: 4rem;
+    left: 4rem;
+}
+
+.letra:nth-child(6) {
+    color: red;
+    top: 5rem;
+    left: 5rem;
+}
+
+.letra:nth-child(7) {
+    color: red;
+    top: 6rem;
+    left: 6rem;
+}
+
+.letra:nth-child(8) {
+    color: red;
+    top: 7rem;
+    left: 7rem;
+}
+
+.letra:nth-child(9) {
+    color: red;
+    top: 8rem;
+    left: 8rem;
+}
+
+.letra:nth-child(10) {
+    color: red;
+    top: 9rem;
+    left: 9rem;
+}
+
+.letra:nth-child(11) {
+    color: red;
+    top: 10rem;
+    left: 10rem;
+}
+
+.letra:nth-child(12) {
+    color: red;
+    top: 11rem;
+    left: 11rem;
+} */
+
+.mensaje {
+    display: block;
+    position: sticky;
+     top: 0px;
+    /* left: 100px; */
+    border: 1px solid red;
+    border-radius: 8px;
+    background-color: khaki;
+}

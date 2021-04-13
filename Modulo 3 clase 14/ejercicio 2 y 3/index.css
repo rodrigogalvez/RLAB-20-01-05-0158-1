@@ -1,0 +1,17 @@
+.clase1 {
+  color: beige;
+  background-color: blue;
+}
+
+.clase2 {
+  color: limegreen;
+  background-color: plum;
+  border: 1px solid red;
+  border-radius: 8px;
+}
+
+.clase3 {
+  color: darkorange;
+  background-color: deeppink;
+  font-size: larger;
+}

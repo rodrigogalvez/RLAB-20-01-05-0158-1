@@ -1,0 +1,28 @@
+.world {
+    width: 800px;
+    height: 600px;
+    background-color: lightseagreen;
+    overflow: hidden;
+    position: absolute;
+}
+
+.mario {
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  pointer-events: none;
+  /* background-color: blueviolet; */
+}
+
+.mario > img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.world:active > .mario {
+    width: 16rem;
+    height: 16rem;
+}
