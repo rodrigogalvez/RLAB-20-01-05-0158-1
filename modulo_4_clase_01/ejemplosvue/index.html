@@ -13,22 +13,15 @@
 </head>
 
 <body>
-
     <div id="app">
-        <h1>Lista de compras</h1>
-        <ol>
-            <li v-for="item of listado">
-                {{item}}
-                <button @click="eliminar(item)">Eliminar</button>
-            </li>
-        </ol>
-        <form @submit.prevent>
-            <label>Item</label>
-            <input type="text"
-                   v-model="item">
-            <button @click="agregar">Agregar</button>
-            <br>
-        </form>
+        <p class="saludo" :style="{fontSize: tamano+'px', backgroundColor: color}">Hola {{nombre}}, bienvenido</p>
+        <label>Su nombre</label>
+        <input type="text" v-model="nombre"><br>
+        <label>Tamaño letra</label>
+        <input type="range" min="8" max="72" v-model.number="tamano">
+        {{tamano}}px<br>
+        <label>Color fondo</label>
+        <input type="color" v-model="color">{{color}}
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

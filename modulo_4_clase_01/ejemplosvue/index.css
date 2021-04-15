@@ -1,0 +1,7 @@
+.saludo {
+  color: blue;
+  box-shadow: 0px 0px 4px 5px rgb(115 25 201 / 26%);
+  text-align: center;
+  border-radius: 8px;
+  font-size: 20px;
+}
