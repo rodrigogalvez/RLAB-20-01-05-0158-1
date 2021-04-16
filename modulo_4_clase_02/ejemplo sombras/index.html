@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="index.css">
+    <title>Ejemplo sombras</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="demostracion">
+            <button class="ejemplo"
+                :style="{boxShadow: shadow}"
+            >Ejemplo</button>
+        </div>
+        <div>
+            <label>Medida</label>
+            <select v-model="unit">
+                <option value="">Elija una medida</option>
+                <option value="px">px</option>
+                <option value="rem">rem</option>
+                <option value="em">em</option>
+                <option value="ex">ex</option>
+                <option value="%">%</option>
+                <option value="vw">vw</option>
+                <option value="vh">vh</option>
+                <option value="vmin">vmin</option>
+                <option value="vmax">vmax</option>
+                <option value="ch">ch</option>
+                <option value="in">Pulgadas</option>
+                <option value="cm">Centímetros</option>
+                <option value="pc">Picas</option>
+                <option value="mm">Milímetros</option>
+                <option value="pt">Punto</option>
+                <option value="Q">1/4 milímetro</option>
+            </select>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" v-model="inset"> Inset
+            </label>
+        </div>
+        <div>
+            <label>Offset X</label>
+            <input type="range" min="-100" max="100" step="0.01" v-model="offsetX">
+            {{offsetX}}
+        </div>
+        <div>
+            <label>Offset Y</label>
+            <input type="range" min="-100" max="100" step="0.01" v-model="offsetY">
+            {{offsetY}}
+        </div>
+        <div>
+            <label>Difuminado</label>
+            <input type="range" min="0" max="100" step="0.01" v-model="blur">
+            {{blur}}
+        </div>
+        <div>
+            <label>Dispersión</label>
+            <input type="range" min="-100" max="100" step="0.01" v-model="spread">
+            {{spread}}
+        </div>
+        <div>
+            <label>Color</label>
+            <input type="color" v-model="color">
+            {{color}}
+        </div>
+        <div>
+            <label>Opacidad</label>
+            <input type="range" min="0" max="100" v-model="opacity">
+            {{opacity}}
+        </div>
+        <div>
+            <label>Resultado:</label>
+            <p>box-shadow: {{shadow}}</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
