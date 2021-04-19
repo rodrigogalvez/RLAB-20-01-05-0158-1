@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <label>Su nombre</label>
+        <input type="text"
+               v-model="nombre"><br>
+        <label>
+            <input type="radio"
+                   v-model="partedia"
+                   value="1">Es de noche
+        </label><br>
+        <label>
+            <input type="radio"
+                   v-model="partedia"
+                   value="2">Es de día
+        </label><br>
+        <button @click="elegirEmocion()">Completar oración</button>
+
+        <div v-if="nombre!=''&&emocion!=''">
+            <p v-if="partedia==2">Buenos días, {{nombre}}. Me siento {{emocion}}</p>
+            <p v-if="partedia==1">Buenas noches, {{nombre}}. Me siento {{emocion}}</p>
+        </div>
+        <div v-else>
+            <p>Complete su nombre y presione el botón "completar oración"</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
