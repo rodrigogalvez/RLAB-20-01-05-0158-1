@@ -1,0 +1,20 @@
+.matriz {
+  display: block;
+  overflow-x: auto;
+}
+
+.fila {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: fit-content;
+}
+
+.celda {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 4px;
+  border: 1px solid black;
+  text-decoration: none;
+}

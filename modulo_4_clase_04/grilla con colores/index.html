@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <form @submit.prevent>
+            <label>Cantidad de celdas</label>
+            <input type="number"
+                   v-model.number="cantidadCeldas"
+                   min="0"
+                   max="2000">
+            <input type="range"
+                   v-model.number="cantidadCeldas"
+                   @input="actualizarCeldas()"
+                   min="0"
+                   max="2000">
+            <button @click="actualizarCeldas()">Actualizar</button>
+            <button @click="iniciarCambio()"
+                    v-if="timeHandler==0">Iniciar cambio</button>
+            <button @click="pararCambio()"
+                    v-else>Parar cambio</button>
+        </form>
+        <ul class="grilla">
+            <li v-for="celda of celdas"
+                class="celda"
+                :style="{backgroundColor: celda.color}"></li>
+        </ul>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

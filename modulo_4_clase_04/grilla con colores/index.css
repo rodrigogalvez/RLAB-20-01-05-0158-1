@@ -1,0 +1,15 @@
+.grilla {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0px;
+}
+
+.celda {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 4px;
+  border: 1px solid black;
+  text-decoration: none;
+}
