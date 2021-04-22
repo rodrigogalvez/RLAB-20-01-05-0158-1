@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="index.js"
+            defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1 v-if="indiceEdicion==-1">Nuevo producto</h1>
+        <h1 v-else>Editando producto</h1>
+        <form @submit.prevent>
+            <label>Nombre producto</label>
+            <input type="text"
+                   v-model="nombre"><br>
+            <label>Precio</label>
+            <input type="number"
+                   v-model.number="precio"><br>
+            <label>Categoria</label>
+            <select v-model="categoria">
+                <option value="">Elija una categoría</option>
+                <option v-for="categoria of categorias"
+                        :value="categoria.codigo">{{categoria.descripcion}}</option>
+            </select>
+            <button v-if="indiceEdicion==-1"
+                    @click="agregar">Agregar</button>
+            <button v-else
+                    @click="guardar">Guardar</button>
+        </form>
+        <h1>Listado de productos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Índice</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(producto, indice) of productos">
+                    <td>{{indice}}</td>
+                    <td>{{producto.nombre}}</td>
+                    <td>${{producto.precio}}</td>
+                    <td>{{textoCategoria(producto.categoria)}}</td>
+                    <td>
+                        <button @click="eliminar(indice)">-</button>
+                        <button @click="editar(indice)">e</button>
+                        <button @click="comprar(indice)">+</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h1>Carrito de compras</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Índice</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(producto, indice) of carrito">
+                    <td>{{indice}}</td>
+                    <td>{{producto.nombre}}</td>
+                    <td>${{producto.precio}}</td>
+                    <td>{{textoCategoria(producto.categoria)}}</td>
+                    <td>
+                        <button @click="quitar(indice)">-</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <ul>
+            <li v-for="(producto, indice) of productos">{{indice}}: {{producto.nombre}} -
+                ${{producto.precio}} -
+                {{textoCategoria(producto.categoria)}}
+                <button @click="eliminar(indice)">-</button>
+                <button @click="editar(indice)">e</button>
+            </li>
+        </ul> -->
+    </div>
+
+</body>
+
+</html>
