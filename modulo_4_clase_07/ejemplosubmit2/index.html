@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible"
+            content="IE=edge">
+      <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet"
+            href="index.css">
+      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+      <script src="index.js"
+              defer></script>
+      <title>Document</title>
+</head>
+
+<body>
+      <div id="app">
+            <form action="formulariook.html"
+                  @submit.prevent="verificar">
+                  <label>Nombre</label>
+                  <input type="text"
+                         v-model="nombre">
+                  <br>
+                  <label>Edad</label>
+                  <input type="number"
+                         v-model.number="edad">
+                  <br>
+                  <button>OK</button>
+            </form>
+            <p v-for="er of errores"
+               class="mensajerojo">Error: {{er}}</p>
+
+      </div>
+</body>
+
+</html>
