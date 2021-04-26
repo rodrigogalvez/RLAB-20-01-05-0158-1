@@ -1,0 +1,13 @@
+.radios {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.figura {
+  display: inline-block;
+  height: 5rem;
+}
+
+.figura > img {
+  height: 100%;
+}
