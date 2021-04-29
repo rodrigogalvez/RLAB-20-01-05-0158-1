@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="semaforo">
+            <div class="luzsemaforo roja" :class="{encendido: luzactiva=='roja'}"></div>
+            <div class="luzsemaforo amarilla" :class="{encendido: luzactiva=='amarilla'}"></div>
+            <div class="luzsemaforo verde" :class="{encendido: luzactiva=='verde'}"></div>
+        </div>
+        <div class="controles">
+            <select v-model="luzactiva">
+                <option value="">--elija un color--</option>
+                <option value="roja">Roja</option>
+                <option value="amarilla">Amarilla</option>
+                <option value="verde">Verde</option>
+            </select><br>
+            <label><input type="checkbox" v-model="automatico">Automático</label><br>
+            <button @click="cambiarColor">Probar</button>
+        </div>
+    </div>
+</body>
+
+</html>

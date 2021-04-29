@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="articulo in articulos" :class="{faltastock: articulo.stock==0, muycaro: articulo.precio>1500, oferta: 1000>articulo.precio}">
+                    <td>{{articulo.codigo}}</td>
+                    <td>{{articulo.descripcion}}</td>
+                    <td>{{articulo.precio}}</td>
+                    <td>{{articulo.stock}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+
+</html>

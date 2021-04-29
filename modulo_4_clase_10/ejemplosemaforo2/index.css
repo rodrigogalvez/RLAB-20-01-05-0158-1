@@ -1,0 +1,55 @@
+.componentesemaforo {
+  display: inline-block;
+  border: 8px solid whitesmoke;
+  background-color: darkgreen ;
+  border-radius: 8px;
+  border-style: double;
+}
+
+.semaforo {
+  display: inline-block;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: black;
+  border: 1px solid lightgray;
+  border-radius: 16px;
+}
+
+.controles {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.luzsemaforo {
+  display: block;
+  height: 32px;
+  width: 32px;
+  box-sizing: border-box;
+  background-color: black;
+  border: 1px solid lightgray;
+  border-radius: 16px;
+}
+
+.roja {
+  background-color: darkred;
+}
+
+.amarilla {
+  background-color: darkgoldenrod;
+}
+
+.verde {
+  background-color: darkgreen;
+}
+
+.roja.encendido {
+  background-color: orangered;
+}
+
+.amarilla.encendido {
+  background-color: yellow;
+}
+
+.verde.encendido {
+  background-color: lawngreen;
+}
