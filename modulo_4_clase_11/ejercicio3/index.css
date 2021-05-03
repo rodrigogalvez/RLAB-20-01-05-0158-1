@@ -1,0 +1,26 @@
+.ficha {
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.ficha > label {
+    display: block;
+    font-weight: bold;
+}
+
+.ficha > div {
+    line-height: 1rem;
+    border: 1px solid darkslategray;
+    border-radius: 2px;
+    margin-bottom: 4px;
+}
+
+.listar {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.listar > .ficha {
+    box-shadow: 4px 4px 8px 8px rgba(128,128,128,90%);
+}
