@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <template id="semaforo">
+        <div class="componentesemaforo">
+            <h1>{{titulo}}</h1>
+            <div class="semaforo">
+                <div class="luzsemaforo roja" :class="{encendido: value=='roja'}"></div>
+                <div class="luzsemaforo amarilla" :class="{encendido: value=='amarilla'}"></div>
+                <div class="luzsemaforo verde" :class="{encendido: value=='verde'}"></div>
+            </div>
+            <div class="controles">
+                <label><input type="radio" v-bind:checked="value==''" @input="$emit('input', '')"
+                >--elija un color--</label><br>
+                <label><input type="radio" v-bind:checked="value=='roja'" @input="$emit('input', 'roja')"
+                >{{roja}}</label><br>
+                <label><input type="radio" v-bind:checked="value=='amarilla'" @input="$emit('input', 'amarilla')"
+                >{{amarilla}}</label><br>
+                <label><input type="radio" v-bind:checked="value=='verde'" @input="$emit('input', 'verde')"
+                >{{verde}}</label><br>
+            </div>
+        </div>
+    </template>
+
+    <div id="app">
+        <semaforo v-for="(semaforo,indice) of semaforos"  
+            :titulo="semaforo.titulo"
+            :roja="semaforo.roja"
+            :amarilla="semaforo.amarilla"
+            :verde="semaforo.verde"
+            v-model="semaforo.luzactiva"
+            :key="indice"
+         ></semaforo>
+         <hr>
+         <semaforo2 v-for="(semaforo,indice) of semaforos" :datos="semaforo" :key="indice"></semaforo2>
+         <h1>Estado de los semáforos</h1>
+         <ul>
+             <li v-for="semaforo of semaforos">
+                {{semaforo.titulo}} - {{semaforo.luzactiva}}
+             </li>
+         </ul>
+    </div>
+</body>
+
+</html>
