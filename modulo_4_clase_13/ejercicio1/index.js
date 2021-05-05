@@ -19,6 +19,13 @@ let clientes = [
     new Cliente('Polin', '19199199-9', 900000)
 ];
 
+/*
+    Ejercicio:
+    parte 1: completar los compontentes clientes-lista y clientes-datos
+    para que muestre el listado de clientes.
+    parte 2: en clientes-lista, implementar una búsqueda activa.
+*/
+
 Vue.component('clientes-datos',{
     template: /*html*/`
         <div>
