@@ -108,21 +108,45 @@ Vue.component('clientes-eliminar', {
 Vue.component('clientes-modificar', {
     template: /*html*/`
         <form @submit.prevent>
-            <input type="text" v-model="datos.nombre">
-            <input type="number" v-model.number="datos.sueldo">
+            <input type="text" v-model="nombre">
+            <input type="text" v-model="rutmodificar">
+            <input type="number" v-model.number="sueldo">
+            <button @click="grabar">OK</button>
             <button @click="finModificacion">X</button>
         </form>
     `,
     props: ["lista", "rut"],
-    computed: {
-        datos() {
-            let indice = this.lista.findIndex(cliente => cliente.rut == this.rut);
-            if (indice > -1) {
-                return this.lista[indice];
-            }
+    mounted() {
+        this.inicializar(this.rut);
+    },
+    watch: {
+        rut(val,oldVal) {
+            this.inicializar(val);
+        }
+    },
+    data() {
+        return {
+            indice: -1,
+            nombre: "",
+            rutmodificar: "",
+            sueldo: 0
         }
     },
     methods: {
+        inicializar(rut) {
+            this.indice = this.lista.findIndex(cliente => cliente.rut == rut);
+            if (this.indice > -1) {
+                this.nombre = this.lista[this.indice].nombre;
+                this.rutmodificar = this.lista[this.indice].rut;
+                this.sueldo = this.lista[this.indice].sueldo;
+            } 
+        },
+        grabar() {
+            this.lista[this.indice].nombre = this.nombre;
+            this.lista[this.indice].sueldo = this.sueldo;
+            this.lista[this.indice].rut = this.rutmodificar;
+            this.$emit('clientemodificado');
+        },
         finModificacion() {
             this.$emit('clientemodificado');
         }
