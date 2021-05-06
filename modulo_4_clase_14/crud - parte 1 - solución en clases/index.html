@@ -12,9 +12,14 @@
 <body>
     <div id="app">
         <h1>Listado de clientes</h1>
-        <clientes-lista :lista="clientes"></clientes-lista>
+        <clientes-lista :lista="clientes" @solictudeliminacion="modoEliminacion"></clientes-lista>
         <h1>Agregar nuevo</h1>
         <clientes-nuevo :lista="clientes"></clientes-nuevo>
+        <h1>Eliminación de clientes</h1>
+        <p>Cliente a eliminar: {{rutEliminar}}</p>
+        <clientes-eliminar v-if="rutEliminar" :lista="clientes" :rut="rutEliminar"
+            @clienteeliminado="finModoEliminacion"
+        ></clientes-eliminar>
     </div>
 </body>
 </html>

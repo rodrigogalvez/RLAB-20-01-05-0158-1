@@ -57,16 +57,60 @@ Vue.component('clientes-datos', {
     template: /*html*/`
         <div>
             {{datos.nombre}} - {{datos.rut}} - {{datos.sueldo}}
+            <button @click="avisarEliminacion">-</button>
         </div>
     `,
-    props: ["datos"]
+    props: ["datos"],
+    methods: {
+        avisarEliminacion() {
+            this.$emit('solictudeliminacion', this.datos.rut);
+        }
+    }
+})
+
+Vue.component('clientes-eliminar', {
+    template: /*html*/`
+        <div v-if="datos">
+            Eliminar al cliente: 
+            {{datos.nombre}} - {{datos.rut}} - {{datos.sueldo}}
+
+            <button @click="siEliminar">-</button>
+            <button @click="noEliminar">Cancelar</button>
+        </div>
+    `,
+    props: ["lista", "rut"],
+    computed: {
+        datos() {
+            let indice = this.lista.findIndex(cliente => cliente.rut == this.rut);
+            if (indice > -1) {
+                return this.lista[indice];
+            }
+        }
+    },
+    methods: {
+        siEliminar() {
+            let indice = this.lista.findIndex(cliente => cliente.rut == this.rut);
+            if (indice > -1) {
+                this.lista.splice(indice, 1);
+            }
+            this.$emit('clienteeliminado');
+        },
+        noEliminar() {
+            this.$emit('clienteeliminado');
+        }
+    }
 })
 
 Vue.component('clientes-lista', {
     template: /*html*/`
         <div>
             <input type="search" v-model="filtro">
-            <clientes-datos v-for="cliente of filtrado" :datos="cliente" :key="cliente.rut"></clientes-datos>
+            <clientes-datos 
+                v-for="cliente of filtrado" 
+                :datos="cliente" 
+                :key="cliente.rut"
+                @solictudeliminacion="solicitaronEliminacion"
+            ></clientes-datos>
         </div>
     `,
     props: ["lista"],
@@ -79,13 +123,27 @@ Vue.component('clientes-lista', {
         filtrado() {
             return this.lista.filter((cliente) => cliente.toString().toUpperCase().includes(this.filtro.toUpperCase()));
         }
+    },
+    methods: {
+        solicitaronEliminacion(rut) {
+            this.$emit('solictudeliminacion', rut);
+        }
     }
 })
 
 new Vue({
     el: "#app",
     data: {
-        clientes: clientes
+        clientes: clientes,
+        rutEliminar: ""
+    },
+    methods: {
+        modoEliminacion(rut) {
+            this.rutEliminar=rut;
+        },
+        finModoEliminacion() {
+            this.rutEliminar="";
+        }
     }
 })
 
