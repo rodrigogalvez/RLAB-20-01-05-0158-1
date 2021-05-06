@@ -58,12 +58,16 @@ Vue.component('clientes-datos', {
         <div>
             {{datos.nombre}} - {{datos.rut}} - {{datos.sueldo}}
             <button @click="avisarEliminacion">-</button>
+            <button @click="avisarModificacion">modificar</button>
         </div>
     `,
     props: ["datos"],
     methods: {
         avisarEliminacion() {
             this.$emit('solictudeliminacion', this.datos.rut);
+        },
+        avisarModificacion() {
+            this.$emit('solictudmodificacion', this.datos.rut);
         }
     }
 })
@@ -101,6 +105,30 @@ Vue.component('clientes-eliminar', {
     }
 })
 
+Vue.component('clientes-modificar', {
+    template: /*html*/`
+        <form @submit.prevent>
+            <input type="text" v-model="datos.nombre">
+            <input type="number" v-model.number="datos.sueldo">
+            <button @click="finModificacion">X</button>
+        </form>
+    `,
+    props: ["lista", "rut"],
+    computed: {
+        datos() {
+            let indice = this.lista.findIndex(cliente => cliente.rut == this.rut);
+            if (indice > -1) {
+                return this.lista[indice];
+            }
+        }
+    },
+    methods: {
+        finModificacion() {
+            this.$emit('clientemodificado');
+        }
+    }
+})
+
 Vue.component('clientes-lista', {
     template: /*html*/`
         <div>
@@ -110,6 +138,7 @@ Vue.component('clientes-lista', {
                 :datos="cliente" 
                 :key="cliente.rut"
                 @solictudeliminacion="solicitaronEliminacion"
+                @solictudmodificacion="solicitaronModificacion"
             ></clientes-datos>
         </div>
     `,
@@ -127,6 +156,9 @@ Vue.component('clientes-lista', {
     methods: {
         solicitaronEliminacion(rut) {
             this.$emit('solictudeliminacion', rut);
+        },
+        solicitaronModificacion(rut) {
+            this.$emit('solictudmodificacion', rut);
         }
     }
 })
@@ -135,7 +167,8 @@ new Vue({
     el: "#app",
     data: {
         clientes: clientes,
-        rutEliminar: ""
+        rutEliminar: "",
+        rutModificar: ""
     },
     methods: {
         modoEliminacion(rut) {
@@ -143,6 +176,12 @@ new Vue({
         },
         finModoEliminacion() {
             this.rutEliminar="";
+        },
+        modoModificacion(rut) {
+            this.rutModificar=rut;
+        },
+        finModoModificacion() {
+            this.rutModificar="";
         }
     }
 })
