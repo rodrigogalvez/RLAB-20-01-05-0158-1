@@ -1,0 +1,98 @@
+.lengueta {
+  background-color: blanchedalmond;
+  border: 0;
+  padding: 0.5rem;
+  margin-right: 0.1rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  outline: none;
+}
+
+.lenguetainactiva {
+  background-color: whitesmoke;
+}
+
+.componentes {
+  background-color: blanchedalmond;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.componentes * {
+  outline: none;
+}
+
+.componentes label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+
+.componentes input {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  line-height: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid burlywood;
+  box-shadow: 0 0 0.5rem 0.1rem rgb(0 128 160 / 30%);
+}
+
+.componentes input[type="number"] {
+  text-align: right;
+}
+
+.componentes input:disabled {
+  background-color: lightgray;
+}
+
+.componentes input:focus,
+.componentes input:hover {
+  box-shadow: 0 0 0.5rem 0.1rem rgb(0 128 160 / 50%);
+}
+
+.componentes button {
+  border: 1px solid burlywood;
+  border-radius: 0.5rem;
+  line-height: 2rem;
+  background-color: goldenrod;
+  color: mintcream;
+  box-shadow: 0 0 0.5rem 0.1rem rgb(0 128 160 / 30%);
+}
+
+.componentes li {
+  line-height: 1.5rem;
+}
+
+.componentes li.seleccionado {
+  font-weight: bold;
+}
+
+.componentes li button {
+  border-radius: 50%;
+  line-height: 1rem;
+  float: right;
+}
+
+.componentes button:hover {
+  box-shadow: 0 0 0.5rem 0.1rem rgb(0 128 160 / 50%);
+}
+
+.componentes button:active {
+  box-shadow: 0 0 0.2rem 0.1rem rgb(0 128 160 / 50%);
+}
+
+.componentes button:disabled {
+  background-color: gray;
+  box-shadow: none;
+}
+
+.componentes h1 {
+  font-size: 1rem;
+  border-bottom: 1px solid goldenrod;
+}
