@@ -1,0 +1,81 @@
+form {
+  background-color: blanchedalmond;
+  padding: 0.5rem;
+  /* border-radius: 0.5rem; */
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+form * {
+  outline: none;
+}
+
+form > label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+
+form > input {
+  margin-bottom: 0.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid burlywood;
+  box-shadow: 0 0 0.5rem 0.1rem rgb(0 128 160 / 30%);
+}
+
+form > input:focus,
+form > input:hover {
+  box-shadow: 0 0 0.5rem 0.1rem rgb(0 128 160 / 50%);
+}
+
+form > button {
+  border: 1px solid burlywood;
+  border-radius: 0.5rem;
+  line-height: 2rem;
+  background-color: goldenrod;
+  color: mintcream;
+  box-shadow: 0 0 0.5rem 0.1rem rgb(0 128 160 / 30%);
+}
+
+form > button:hover {
+  box-shadow: 0 0 0.5rem 0.1rem rgb(0 128 160 / 50%);
+}
+
+form > button:active {
+  box-shadow: 0 0 0.2rem 0.1rem rgb(0 128 160 / 50%);
+}
+
+form > button:disabled {
+    background-color: gray;
+    box-shadow: none;
+  }
+
+.listaproductos {
+  background-color: blanchedalmond;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.listaproductos > h1 {
+  font-size: 1rem;
+  border-bottom: 1px solid goldenrod;
+}
+
+.lengueta {
+  background-color: blanchedalmond;
+  border: 0;
+  padding: 0.5rem;
+  margin-right: 0.1rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  outline: none;
+}
+
+.lenguetainactiva {
+  background-color: whitesmoke;
+}
