@@ -1,8 +1,6 @@
 <template>
   <div>
     <form @submit.prevent>
-      <!-- <label>Código de producto</label>
-      <p>{{ id }}</p> -->
       <label>Descripción</label>
       <div><input type="text" v-model="descripcion" /></div>
       <label>Precio</label>
