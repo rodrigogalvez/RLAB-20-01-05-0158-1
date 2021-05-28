@@ -1,13 +1,13 @@
 <template>
   <div>
     <form @submit.prevent v-if="id">
-      <label>Código de producto</label>
+      <label>Código de producto a eliminar</label>
       <p>{{ id }}</p>
       <label>Descripción</label>
-      <div><input type="text" v-model="descripcion" /></div>
+      <div>{{descripcion}}</div>
       <label>Precio</label>
-      <div><input type="number" v-model.number="precio" /></div>
-      <button @click="guardar()">Guardar</button>
+      <div>{{precio}}</div>
+      <button @click="guardar()">Eliminar</button>
       <button @click="cancelar()">Cancelar</button>
     </form>
   </div>
@@ -24,23 +24,10 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["actualizarProducto"]),
+    ...mapActions(["eliminarProducto", "buscarProducto"]),
     guardar() {
-      // this.$store
-      //   .dispatch("actualizarProducto", {
-      //     id: this.id,
-      //     descripcion: this.descripcion,
-      //     precio: this.precio,
-      //   })
-      //   .then(() => {
-      //     this.$router.push({
-      //       name: "Productos",
-      //     });
-      //   });
-      this.actualizarProducto( {
-          id: this.id,
-          descripcion: this.descripcion,
-          precio: this.precio,
+      this.eliminarProducto( {
+          id: this.id
         })
         .then(() => {
           this.$router.push({
@@ -57,7 +44,7 @@ export default {
   },
   mounted() {
     this.id = Number(this.$route.params.id);
-    this.$store.dispatch("buscarProducto", this.id).then((producto) => {
+    this.buscarProducto(this.id).then((producto) => {
       if (producto) {
         this.descripcion = producto.descripcion;
         this.precio = producto.precio;

@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Productos from '../views/Productos.vue'
 import ModificarProducto from '../views/ModificarProducto.vue'
 import AgregarProducto from '../views/AgregarProducto.vue'
+import EliminarProducto from '../views/EliminarProducto.vue'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
     path: "/modificar/:id",
     name: "Modificar",
     component: ModificarProducto
+  },
+  {
+    path: "/eliminar/:id",
+    name: "Eliminar",
+    component: EliminarProducto
   },
   {
     path: "/agregar",

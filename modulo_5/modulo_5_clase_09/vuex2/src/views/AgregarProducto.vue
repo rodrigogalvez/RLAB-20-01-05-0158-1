@@ -13,6 +13,7 @@
 
 
 <script>
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -21,9 +22,19 @@ export default {
     };
   },
   methods: {
+      ...mapActions(["agregarProducto"]),
     guardar() {
-      this.$store
-        .dispatch("agregarProducto", {
+    //   this.$store
+    //     .dispatch("agregarProducto", {
+    //       descripcion: this.descripcion,
+    //       precio: this.precio,
+    //     })
+    //     .then(() => {
+    //       this.$router.push({
+    //         name: "Productos",
+    //       });
+    //     });
+    this.agregarProducto({
           descripcion: this.descripcion,
           precio: this.precio,
         })

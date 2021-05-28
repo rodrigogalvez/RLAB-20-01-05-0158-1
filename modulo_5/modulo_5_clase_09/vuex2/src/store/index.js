@@ -35,6 +35,12 @@ export default new Vuex.Store({
         state.productos[indice].precio = payload.precio;
       }
     },
+    eliminarProducto(state, payload) {
+      let indice = state.productos.findIndex((producto) => producto.id == payload.id);
+      if (indice > -1) {
+        state.productos.splice(indice, 1);
+      }
+    },
     agregarProducto(state, payload) {
       state.productos.push({
         id: payload.id,
@@ -68,6 +74,12 @@ export default new Vuex.Store({
           descripcion: payload.descripcion,
           precio: payload.precio
         });
+        resolve();
+      });
+    },
+    eliminarProducto(context, payload) {
+      return new Promise((resolve) => {
+        context.commit('eliminarProducto', payload);
         resolve();
       });
     }
