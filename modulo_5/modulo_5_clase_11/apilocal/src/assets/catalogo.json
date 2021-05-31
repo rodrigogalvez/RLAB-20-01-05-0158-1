@@ -1,0 +1,17 @@
+[
+    {
+        "codigo": 1,
+        "descripcion": "lápiz",
+        "precio": 300
+    },
+    {
+        "codigo": 2,
+        "descripcion": "goma",
+        "precio": 500
+    },
+    {
+        "codigo": 3,
+        "descripcion": "regla",
+        "precio": 700
+    }
+]
