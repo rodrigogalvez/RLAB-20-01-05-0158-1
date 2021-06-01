@@ -27,7 +27,7 @@ export default {
         this.listado = await resultado.json();
     },
     consultar() {
-      fetch("/data/catalogo.json").then((resultado) => {
+      fetch("/data/catalogo.json?cantidadmaxima=2&parametro2=123").then((resultado) => {
         if (resultado.status == 200) {
         //   resultado.text().then((datos) => {
         //     console.log(datos);
